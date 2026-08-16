@@ -1423,6 +1423,193 @@ body {
 .portfolio-card:nth-child(7) { animation-delay: 0.7s; }
 .portfolio-card:nth-child(8) { animation-delay: 0.8s; }
 
+/* ================= SERVICES PAGE ================= */
+.services-page {
+    min-height: calc(100vh - 76px);
+    padding: 15px 9% 20px;
+    background:
+        radial-gradient(circle at 5% 8%, rgba(110, 80, 255, .09), transparent 18%),
+        radial-gradient(circle at 95% 12%, rgba(120, 90, 255, .08), transparent 20%),
+        #fafbff;
+}
+
+.services-hero {
+    text-align: center;
+    margin-bottom: 16px;
+    padding: 60px 0 20px;
+}
+
+.services-hero .offer {
+    display: inline-block;
+    padding: 4px 12px;
+    border-radius: 20px;
+    background: var(--white);
+    color: var(--purple);
+    font-size: 10px;
+    font-weight: bold;
+    box-shadow: 0 5px 20px rgba(50, 30, 130, .07);
+    margin-bottom: 8px;
+}
+
+.services-hero .offer span {
+    margin: 0 4px;
+}
+
+.services-hero h1 {
+    font-family: var(--font-heading);
+    font-size: clamp(1.4rem, 3vw, 2rem);
+    font-weight: 800;
+    color: var(--primary);
+    line-height: 1.2;
+    margin-bottom: 6px;
+}
+
+.services-hero h1 strong {
+    color: var(--purple);
+}
+
+.services-hero p {
+    color: var(--text-light);
+    font-size: 0.9rem;
+    max-width: 450px;
+    margin: 0 auto;
+}
+
+.services-section {
+    max-width: 1080px;
+    margin: auto;
+    padding-bottom: 20px;
+}
+
+.services-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 24px;
+}
+
+.service-card {
+    background: var(--white);
+    border-radius: var(--radius);
+    padding: 24px;
+    box-shadow: var(--shadow);
+    border: 1px solid rgba(0, 0, 0, 0.04);
+    transition: var(--transition);
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    opacity: 0;
+    transform: translateY(30px);
+    animation: fadeInUp 0.8s ease-out forwards;
+}
+
+.service-card:nth-child(1) { animation-delay: 0.1s; }
+.service-card:nth-child(2) { animation-delay: 0.2s; }
+.service-card:nth-child(3) { animation-delay: 0.3s; }
+.service-card:nth-child(4) { animation-delay: 0.4s; }
+.service-card:nth-child(5) { animation-delay: 0.5s; }
+.service-card:nth-child(6) { animation-delay: 0.6s; }
+.service-card:nth-child(7) { animation-delay: 0.7s; }
+.service-card:nth-child(8) { animation-delay: 0.8s; }
+
+.service-card:hover {
+    transform: translateY(-6px);
+    box-shadow: var(--shadow-lg);
+}
+
+.service-card-icon {
+    width: 48px;
+    height: 48px;
+    border-radius: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    color: var(--white);
+    flex-shrink: 0;
+}
+
+.service-card-icon.purple-icon {
+    background: var(--purple);
+}
+
+.service-card-icon.blue-icon {
+    background: var(--blue);
+}
+
+.service-card-icon.green-icon {
+    background: var(--green);
+}
+
+.service-card-icon.orange-icon {
+    background: var(--orange);
+}
+
+.service-card h3 {
+    font-family: var(--font-heading);
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: var(--primary);
+    margin: 0;
+}
+
+.service-card p {
+    color: var(--text-light);
+    font-size: 0.85rem;
+    line-height: 1.6;
+    margin: 0;
+    flex-grow: 1;
+}
+
+.service-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    color: var(--purple);
+    font-size: 0.85rem;
+    font-weight: 600;
+    text-decoration: none;
+    transition: var(--transition);
+    margin-top: 4px;
+}
+
+.service-link:hover {
+    gap: 10px;
+    color: var(--primary);
+}
+
+/* ================= RESPONSIVE - SERVICES ================= */
+@media (max-width: 950px) {
+    .services-page {
+        padding: 30px 25px;
+    }
+}
+
+@media (max-width: 650px) {
+    .services-page {
+        padding: 25px 15px;
+    }
+
+    .services-grid {
+        gap: 16px;
+    }
+
+    .service-card {
+        padding: 20px;
+    }
+}
+
+@media (min-width: 768px) {
+    .services-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (min-width: 1024px) {
+    .services-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
 /* ================= UTILITIES ================= */
 .text-gradient {
     background: linear-gradient(135deg, var(--purple), var(--orange));
