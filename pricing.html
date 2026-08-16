@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pricing — WebNexa</title>
+    <link rel="stylesheet" href="css/home.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+
+<!-- ================= NAVBAR ================= -->
+<header class="navbar">
+    <a href="index.html" class="logo" aria-label="WebNexa Home">
+        <div class="logo-icon">&lt;/&gt;</div>
+        <span class="logo-white">Web</span><span class="logo-purple">Nexa</span>
+    </a>
+
+    <button class="mobile-toggle" id="mobileToggle" aria-label="Toggle menu" aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+    </button>
+
+    <nav aria-label="Main navigation" id="mainNav">
+        <a href="index.html">Home</a>
+        <a href="index.html#services">Services</a>
+        <a href="pricing.html" class="active">Pricing</a>
+        <a href="portfolio.html">Portfolio</a>
+        <a href="index.html#contact">Contact</a>
+        
+        <div class="nav-actions">
+            <a href="https://wa.me/923008932525" class="whatsapp-btn" target="_blank" rel="noopener noreferrer">💬 WhatsApp</a>
+            <a href="requirements.html" class="talk-btn">Get Your Website <span>→</span></a>
+        </div>
+    </nav>
+</header>
+
+<div class="mobile-bottom-bar">
+    <a href="https://wa.me/923008932525" class="mobile-bar-btn whatsapp" target="_blank" rel="noopener noreferrer">💬 WhatsApp</a>
+    <a href="requirements.html" class="mobile-bar-btn get-started">Get Started <span>→</span></a>
+</div>
+
+<!-- ================= PRICING ================= -->
+<main class="pricing-page" id="pricing">
+
+    <!-- ================= PRICING HERO ================= -->
+    <section class="pricing-hero">
+        <div class="offer">
+            <span>✦</span> PRICING <span>✦</span>
+        </div>
+        <h1>
+            Simple &amp; <strong>Transparent Pricing</strong>
+        </h1>
+        <p>
+            Don't hide your starting price. Choose the plan that fits your needs.
+        </p>
+        <div class="heading-line"></div>
+    </section>
+
+    <!-- ================= PRICING CARDS ================= -->
+    <section class="pricing-section">
+        <div class="pricing-grid">
+
+            <!-- Starter -->
+            <div class="pricing-card">
+                <div class="pricing-card-header">
+                    <h3>Starter</h3>
+                    <div class="pricing-price">Starting from <strong>Rs. XXXX</strong></div>
+                </div>
+                <ul class="pricing-features">
+                    <li>1-page website</li>
+                    <li>Responsive design</li>
+                    <li>Contact section</li>
+                    <li>WhatsApp button</li>
+                    <li>Basic SEO</li>
+                    <li>Social media links</li>
+                    <li>Basic support</li>
+                </ul>
+                <a href="requirements.html" class="pricing-btn">Get Started <span>→</span></a>
+            </div>
+
+            <!-- Business -->
+            <div class="pricing-card">
+                <div class="pricing-card-header">
+                    <h3>Business</h3>
+                    <div class="pricing-price">Starting from <strong>Rs. XXXX</strong></div>
+                </div>
+                <ul class="pricing-features">
+                    <li>3–5 pages</li>
+                    <li>Custom design</li>
+                    <li>Responsive layout</li>
+                    <li>Contact form</li>
+                    <li>WhatsApp integration</li>
+                    <li>Basic SEO</li>
+                    <li>Social media integration</li>
+                    <li>Support</li>
+                </ul>
+                <a href="requirements.html" class="pricing-btn">Get Started <span>→</span></a>
+            </div>
+
+            <!-- Professional -->
+            <div class="pricing-card">
+                <div class="pricing-card-header">
+                    <h3>Professional</h3>
+                    <div class="pricing-price">Starting from <strong>Rs. XXXX</strong></div>
+                </div>
+                <ul class="pricing-features">
+                    <li>5–10+ pages</li>
+                    <li>Advanced design</li>
+                    <li>Custom functionality</li>
+                    <li>Forms</li>
+                    <li>SEO setup</li>
+                    <li>Third-party integrations</li>
+                    <li>Extended support</li>
+                </ul>
+                <a href="requirements.html" class="pricing-btn">Request a Quote <span>→</span></a>
+            </div>
+
+        </div>
+
+        <!-- ================= PRICING NOTE ================= -->
+        <div class="pricing-note">
+            <p>Final price depends on your website requirements and features.</p>
+            <a href="requirements.html" class="pricing-exact-btn">Get Exact Price <span>→</span></a>
+        </div>
+    </section>
+
+</main>
+
+<script>
+    const mobileToggle = document.getElementById('mobileToggle');
+    const mainNav = document.getElementById('mainNav');
+    
+    if (mobileToggle && mainNav) {
+        mobileToggle.addEventListener('click', function() {
+            const isOpen = mainNav.classList.toggle('open');
+            mobileToggle.classList.toggle('active');
+            mobileToggle.setAttribute('aria-expanded', String(isOpen));
+            document.body.classList.toggle('menu-open', isOpen);
+        });
+        
+        mainNav.querySelectorAll('a').forEach(function(link) {
+            link.addEventListener('click', function() {
+                mainNav.classList.remove('open');
+                mobileToggle.classList.remove('active');
+                mobileToggle.setAttribute('aria-expanded', 'false');
+                document.body.classList.remove('menu-open');
+            });
+        });
+        
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape' && mainNav.classList.contains('open')) {
+                mainNav.classList.remove('open');
+                mobileToggle.classList.remove('active');
+                mobileToggle.setAttribute('aria-expanded', 'false');
+                document.body.classList.remove('menu-open');
+            }
+        });
+    }
+</script>
+
+</body>
+</html>
